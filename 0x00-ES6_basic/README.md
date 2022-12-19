@@ -257,9 +257,9 @@
 	Full example:
 	```
 	> employees = {
-	...createEmployeesObject('engineering', engineering),
-	...createEmployeesObject('design', design),
-	};
+			...createEmployeesObject('engineering', engineering),
+			...createEmployeesObject('design', design),
+		};
 	>
 	> const report = createReportObject(employees);
 	> const reportWithIterator = createIteratorObject(report);
