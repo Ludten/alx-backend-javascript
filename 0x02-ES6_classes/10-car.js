@@ -56,6 +56,6 @@ export default class Airport {
   }
 
   cloneCar() {
-    return Object.assign(Object.create(Object.getPrototypeOf(this)), this);
+    return Object.create(Object.getPrototypeOf(this));
   }
 }
