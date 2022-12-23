@@ -1,4 +1,4 @@
-export default class Airport {
+export default class Car {
   constructor(brand, motor, color) {
     this._brand = brand;
     this._motor = motor;
@@ -6,7 +6,7 @@ export default class Airport {
   }
 
   static get [Symbol.species]() {
-    return this;
+    return Car;
   }
 
   cloneCar() {
