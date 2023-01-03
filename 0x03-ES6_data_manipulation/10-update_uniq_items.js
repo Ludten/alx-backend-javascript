@@ -8,5 +8,4 @@ export default function updateUniqueItems(holmap) {
   } else {
     throw new Error('Cannot Process');
   }
-  return holmap;
 }
