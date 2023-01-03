@@ -6,6 +6,6 @@ export default function updateUniqueItems(holmap) {
       }
     }
   } else {
-    throw new Error('Cannot Process');
+    throw new Error('Cannot process');
   }
 }
