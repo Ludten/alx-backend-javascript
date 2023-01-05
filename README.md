@@ -1,1 +1,1 @@
-ALX Backend Specialisation Projects
+ALX Javascript Backend Specialisation Projects
