@@ -1,7 +1,7 @@
 const app = require('http');
 const fs = require('fs');
 
-function countStudents(path='database.csv') {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) reject(new Error('Cannot load the database'));
@@ -34,12 +34,13 @@ module.exports = app.createServer(async (req, res) => {
     res.end();
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
-    await countStudents(process.argv[2])
+    const file = process.argv.length > 2 ? process.argv[2] : ''
+    await countStudents(file)
       .then((data) => {
         res.write(data);
       })
       .catch((error) => {
-        console.log(error);
+        res.write(error.message);
       });
     res.end();
   }
