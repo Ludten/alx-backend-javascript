@@ -1,9 +1,8 @@
 const fs = require('fs');
 
 function countStudents(path) {
-  let db;
   try {
-    db = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
+    const db = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
   } catch (err) {
     throw new Error('Cannot load the database');
   }
@@ -23,8 +22,8 @@ function countStudents(path) {
     }
   });
   console.log(`Number of students: ${cslist.length + swlist.length}`);
-  console.log(`Number of students in CS: ${cslist.length}. ${cslist.join(', ')}`);
-  console.log(`Number of students in SWE: ${swlist.length}. ${swlist.join(', ')}`);
+  console.log(`Number of students in CS: ${cslist.length}. List: ${cslist.join(', ')}`);
+  console.log(`Number of students in SWE: ${swlist.length}. List: ${swlist.join(', ')}`);
 }
 
 module.exports = countStudents;
