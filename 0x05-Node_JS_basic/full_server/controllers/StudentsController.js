@@ -1,6 +1,6 @@
 import readDatabase from '../utils';
 
-export default class StudentsController {
+class StudentsController {
   static async getAllStudents(_request, response) {
     response.status(200);
     response.write('This is the list of our students\n');
@@ -38,3 +38,6 @@ export default class StudentsController {
     response.end();
   }
 }
+
+export default StudentsController;
+module.exports = StudentsController;
