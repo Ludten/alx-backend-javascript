@@ -44,7 +44,9 @@ app.get('/students', async (_req, res) => {
     .catch((error) => {
       res.write(error.message);
     });
-    res.end();
+  res.end();
 });
 
 app.listen(port);
+
+module.exports = app;
