@@ -34,7 +34,7 @@ module.exports = app.createServer(async (req, res) => {
     res.end();
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
-    const file = process.argv.length > 2 ? process.argv[2] : ''
+    const file = process.argv.length > 2 ? process.argv[2] : '';
     await countStudents(file)
       .then((data) => {
         res.write(data);
