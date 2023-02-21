@@ -1,8 +1,9 @@
 const fs = require('fs');
 
 function countStudents(path) {
+  let db;
   try {
-    const db = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
+    db = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
   } catch (err) {
     throw new Error('Cannot load the database');
   }
