@@ -15,5 +15,6 @@ module.exports = {
     'no-unused-expressions': 'off',
     'no-console': 'off',
     'consistent-return': 'off',
+    'no-self-compare': 'off',
   },
 };
