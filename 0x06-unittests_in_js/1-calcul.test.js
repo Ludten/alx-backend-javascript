@@ -77,4 +77,9 @@ describe('calculateNumber', () => {
       assert.equal(calculateNumber('DIVIDE', 2.5, 0), 'Error');
     });
   });
+  describe('others', () => {
+    it('others', () => {
+      assert.equal(calculateNumber('MULTIPLY', 2.5, 2), undefined);
+    });
+  });
 });
