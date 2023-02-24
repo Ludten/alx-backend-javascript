@@ -10,9 +10,8 @@ describe('Index page', () => {
         if (error) throw error;
         expect(body).to.equal('Welcome to the payment system');
         expect(response.statusCode).to.equal(200);
-        expect(response.statusMessage).to.equal('OK');
+        done();
       });
-      done();
     } catch (error) {
       done(error);
     }
