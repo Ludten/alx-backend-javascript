@@ -25,6 +25,7 @@ class StudentsController {
       await readDatabase(file)
         .then((data) => {
           const str = `List: ${data[major].join(', ')}`;
+          response.status(200);
           response.write(str);
         })
         .catch((error) => {
@@ -32,7 +33,6 @@ class StudentsController {
           response.write(error.message);
         });
     } else {
-      response.status(200);
       response.write('Major parameter must be CS or SWE');
     }
     response.end();
