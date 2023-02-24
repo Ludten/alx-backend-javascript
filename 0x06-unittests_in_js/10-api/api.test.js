@@ -68,7 +68,6 @@ describe('Index page', () => {
           json: { userName: 'Betty' },
         }, (error, response, body) => {
           if (error) throw error;
-          console.log(body);
           expect(body).to.equal('Welcome Betty');
           expect(response.statusCode).to.equal(200);
           done();
