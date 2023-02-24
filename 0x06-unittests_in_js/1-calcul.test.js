@@ -74,7 +74,7 @@ describe('calculateNumber', () => {
       assert.equal(calculateNumber('DIVIDE', 0, 3.99999), 0);
     });
     it('zero b', () => {
-      assert.equal(calculateNumber('DIVIDE', 2.5, 0), 'Error');
+      assert.equal(calculateNumber('DIVIDE', 2.5, 0.4), 'Error');
     });
   });
   describe('others', () => {
