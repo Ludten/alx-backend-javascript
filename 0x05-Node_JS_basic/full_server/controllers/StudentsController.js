@@ -3,11 +3,11 @@ import readDatabase from '../utils';
 class StudentsController {
   static async getAllStudents(_request, response) {
     response.status(200);
-    response.write('This is the list of our students\n');
     const file = process.argv.length > 2 ? process.argv[2] : '';
     await readDatabase(file)
       .then((data) => {
-        const str = `Number of students: ${data.CS.length + data.SWE.length}\nNumber of students in CS: ${data.CS.length}. List: ${data.CS.join(', ')}\nNumber of students in SWE: ${data.SWE.length}. List: ${data.SWE.join(', ')}`;
+        response.write('This is the list of our students\n');
+        const str = `Number of students in CS: ${data.CS.length}. List: ${data.CS.join(', ')}\nNumber of students in SWE: ${data.SWE.length}. List: ${data.SWE.join(', ')}`;
         response.write(str);
       })
       .catch((error) => {
