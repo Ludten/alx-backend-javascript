@@ -18,24 +18,20 @@ class StudentsController {
   }
 
   static async getAllStudentsByMajor(request, response) {
-    response.status(200);
     const { major } = request.params;
     if (major === 'CS' || major === 'SWE') {
       const file = process.argv.length > 2 ? process.argv[2] : '';
       await readDatabase(file)
         .then((data) => {
           const str = `List: ${data[major].join(', ')}`;
-          response.status(200);
-          response.write(str);
+          response.status(200).send(str);
         })
         .catch((error) => {
-          response.status(500);
-          response.write(error.message);
+          response.status(500).send(error.message);
         });
     } else {
-      response.write('Major parameter must be CS or SWE');
+      response.status(500).send('Major parameter must be CS or SWE');
     }
-    response.end();
   }
 }
 
